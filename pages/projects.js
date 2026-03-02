@@ -66,7 +66,7 @@ export default function Projects() {
           <Link href="/projects/fine-tuning-project" className="group block">
             <div className="space-y-6 rounded-xl border border-gray-800 p-6 hover:border-gray-600 transition">
               <img
-                src="/placeholders/fine-tune-preview.png"
+                src="/screenshots/heroproject3.jpg"
                 alt="Fine-Tuning Project Screenshot"
                 className="rounded-lg w-full"
               />
@@ -90,7 +90,7 @@ export default function Projects() {
           <Link href="/projects/ai-middleware" className="group block">
             <div className="space-y-6 rounded-xl border border-gray-800 p-6 hover:border-gray-600 transition">
               <img
-                src="/placeholders/middleware-preview.png"
+                src="/screenshots/heroproject4.jpg"
                 alt="AI Middleware Screenshot"
                 className="rounded-lg w-full"
               />
