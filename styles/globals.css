@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  font-variant: small-caps;
+  font-feature-settings: "smcp";
+}
+
+.body-text {
+  font-variant: normal;
+  font-feature-settings: normal;
+}

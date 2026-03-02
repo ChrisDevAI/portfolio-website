@@ -26,7 +26,7 @@ export default function Layout({ children }) {
 
           {/* Right: Everything else stays centered inside max width */}
           <div className="flex-1">
-            <div className="max-w-5xl ml-0 mr-auto flex flex-col items-center">
+            <div className="max-w-5xl -ml-12 mr-auto flex flex-col items-center">
               {/* Navigation */}
               <nav className="flex gap-10 text-3xl font-semibold mb-6">
                 {navItems.map((item) => (
@@ -70,7 +70,7 @@ export default function Layout({ children }) {
       </main>
 
       <footer className="bg-gray-800 text-center p-4 text-sm text-gray-400 border-t border-gray-700">
-        <p>© 2025 Christopher Mena</p>
+        <p>© 2026 Christopher Mena</p>
       </footer>
     </div>
   );
