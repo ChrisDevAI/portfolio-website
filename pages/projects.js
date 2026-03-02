@@ -18,7 +18,7 @@ export default function Projects() {
           <Link href="/projects/chess-ai-tutor" className="group block">
             <div className="space-y-6 rounded-xl border border-gray-800 p-6 hover:border-gray-600 transition">
               <img
-                src="/placeholders/chess-preview.png"
+                src="/screenshots/herochessai.jpg"
                 alt="Chess AI Tutor Screenshot"
                 className="rounded-lg w-full"
               />
@@ -42,7 +42,7 @@ export default function Projects() {
           <Link href="/projects/student-scheduler" className="group block">
             <div className="space-y-6 rounded-xl border border-gray-800 p-6 hover:border-gray-600 transition">
               <img
-                src="/placeholders/scheduler-preview.png"
+                src="/screenshots/herostudentscheduler.jpg"
                 alt="Student Scheduler Screenshot"
                 className="rounded-lg w-full"
               />
