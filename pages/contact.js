@@ -60,8 +60,7 @@ export default function Contact() {
           {/* LEFT COLUMN */}
           <div className="text-gray-300 space-y-4">
             <p>
-              Feel free to reach out regarding AI engineering roles, collaborations,
-              or technical projects.
+              Open to Applied AI engineering roles, technical collaborations, and research-aligned opportunities.
 
               
             </p>

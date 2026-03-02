@@ -1,18 +1,115 @@
-import Head from 'next/head';
+import Head from "next/head";
+import Link from "next/link";
 
 export default function Projects() {
   return (
     <>
       <Head>
-        <title>Projects | Chris R</title>
-        <meta name="description" content="Projects go here" />
+        <title>Projects | Christopher Mena</title>
+        <meta
+          name="description"
+          content="Applied AI systems integrating machine learning and full-stack architecture."
+        />
       </Head>
 
-      <main className="prose prose-invert max-w-3xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
-        <h1>Projects</h1>
-        <p>
-          [Write something about yourself here. Replace this block with your real content.]
-        </p>
+      <main className="max-w-6xl mx-auto px-6 pt-32 pb-24">
+        <div className="grid md:grid-cols-2 gap-16">
+          {/* Chess AI Tutor */}
+          <Link href="/projects/chess-ai-tutor" className="group block">
+            <div className="space-y-6 rounded-xl border border-gray-800 p-6 hover:border-gray-600 transition">
+              <img
+                src="/placeholders/chess-preview.png"
+                alt="Chess AI Tutor Screenshot"
+                className="rounded-lg w-full"
+              />
+
+              <div className="space-y-3">
+                <h2 className="text-xl font-semibold text-gray-100 group-hover:text-white transition">
+                  Chess AI Tutor
+                </h2>
+
+                <ul className="space-y-2 text-gray-400 text-sm">
+                  <li>Stockfish engine integration</li>
+                  <li>LLM-based explanation layer</li>
+                  <li>Snapshot position analysis</li>
+                  <li>Local-first inference design</li>
+                </ul>
+              </div>
+            </div>
+          </Link>
+
+          {/* Student Scheduler */}
+          <Link href="/projects/student-scheduler" className="group block">
+            <div className="space-y-6 rounded-xl border border-gray-800 p-6 hover:border-gray-600 transition">
+              <img
+                src="/placeholders/scheduler-preview.png"
+                alt="Student Scheduler Screenshot"
+                className="rounded-lg w-full"
+              />
+
+              <div className="space-y-3">
+                <h2 className="text-xl font-semibold text-gray-100 group-hover:text-white transition">
+                  Student Scheduler
+                </h2>
+
+                <ul className="space-y-2 text-gray-400 text-sm">
+                  <li>OCR pipeline with Tesseract</li>
+                  <li>LLM course code extraction</li>
+                  <li>Constraint-based schedule generation</li>
+                  <li>Full-stack implementation</li>
+                </ul>
+              </div>
+            </div>
+          </Link>
+
+          {/* Computer Vision Project */}
+          <Link href="/projects/computer-vision-system" className="group block">
+            <div className="space-y-6 rounded-xl border border-gray-800 p-6 hover:border-gray-600 transition">
+              <img
+                src="/placeholders/cv-preview.png"
+                alt="Computer Vision Project Screenshot"
+                className="rounded-lg w-full"
+              />
+
+              <div className="space-y-3">
+                <h2 className="text-xl font-semibold text-gray-100 group-hover:text-white transition">
+                  Computer Vision System
+                </h2>
+
+                <ul className="space-y-2 text-gray-400 text-sm">
+                  <li>Custom dataset training pipeline</li>
+                  <li>YOLO-based detection model</li>
+                  <li>Real-time inference experimentation</li>
+                  <li>Performance optimization</li>
+                </ul>
+              </div>
+            </div>
+          </Link>
+
+          {/* AI Middleware */}
+          <Link href="/projects/ai-middleware" className="group block">
+            <div className="space-y-6 rounded-xl border border-gray-800 p-6 hover:border-gray-600 transition">
+              <img
+                src="/placeholders/middleware-preview.png"
+                alt="AI Middleware Screenshot"
+                className="rounded-lg w-full"
+              />
+
+              <div className="space-y-3">
+                <h2 className="text-xl font-semibold text-gray-100 group-hover:text-white transition">
+                  AI Middleware (Domain-Adaptive Layer)
+                </h2>
+
+                <ul className="space-y-2 text-gray-400 text-sm">
+                  <li>Software-domain vocabulary specialization</li>
+                  <li>False positive reduction framework</li>
+                  <li>Context calibration pipeline</li>
+                  <li>Precision / recall evaluation</li>
+                </ul>
+              </div>
+            </div>
+          </Link>
+        </div>
       </main>
     </>
   );

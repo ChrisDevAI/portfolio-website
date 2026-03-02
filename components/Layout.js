@@ -15,41 +15,51 @@ export default function Layout({ children }) {
   return (
     <div className="min-h-screen flex flex-col bg-neutral-900 text-gray-100">
       <header className="bg-gray-800 py-4 border-b border-gray-700">
-        <div className="max-w-5xl mx-auto flex flex-col items-center">
-          
-          {/* Navigation */}
-          <nav className="flex gap-10 text-3xl font-semibold mb-8">
-            {navItems.map((item) => (
-              <Link
-                key={item.path}
-                href={item.path}
-                className={`transition ${
-                  router.pathname === item.path
-                    ? "text-white underline underline-offset-4"
-                    : "text-gray-300 hover:text-white"
-                }`}
-              >
-                {item.name}
-              </Link>
-            ))}
-          </nav>
+        <div className="flex items-center px-20">
+          {/* Left: Identity (true left aligned) */}
+          <Link href="/" className="flex flex-col leading-tight">
+            <span className="text-3xl md:text-4xl font-bold text-white tracking-tight">
+              Christopher Mena
+            </span>
+            <span className="text-base md:text-lg text-gray-400">Applied AI Systems Engineer</span>
+          </Link>
 
-          {/* Social Icons */}
-          <SocialIcons />
+          {/* Right: Everything else stays centered inside max width */}
+          <div className="flex-1">
+            <div className="max-w-5xl ml-0 mr-auto flex flex-col items-center">
+              {/* Navigation */}
+              <nav className="flex gap-10 text-3xl font-semibold mb-6">
+                {navItems.map((item) => (
+                  <Link
+                    key={item.path}
+                    href={item.path}
+                    className={`transition ${
+                      router.pathname === item.path
+                        ? "text-white underline underline-offset-4"
+                        : "text-gray-300 hover:text-white"
+                    }`}
+                  >
+                    {item.name}
+                  </Link>
+                ))}
+              </nav>
 
-          {/* Download CV */}
-          <div className="mt-2">
-            <a
-              href="/ChrisR-CV.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-7 py-2 rounded-md bg-gray-700/60 border border-gray-500/40 
-              hover:bg-gray-600/60 hover:border-gray-400/60 transition font-medium backdrop-blur-sm"
+              {/* Social Icons */}
+              <SocialIcons />
 
-
-            >
-              Download CV
-            </a>
+              {/* Download CV */}
+              <div className="mt-2">
+                <a
+                  href="/ChrisR-CV.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-7 py-2 rounded-md bg-gray-700/60 border border-gray-500/40 
+            hover:bg-gray-600/60 hover:border-gray-400/60 transition font-medium backdrop-blur-sm"
+                >
+                  Download CV
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </header>
