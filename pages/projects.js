@@ -62,25 +62,25 @@ export default function Projects() {
             </div>
           </Link>
 
-          {/* Computer Vision Project */}
-          <Link href="/projects/computer-vision-system" className="group block">
+          {/* Fine-Tuning Project */}
+          <Link href="/projects/fine-tuning-project" className="group block">
             <div className="space-y-6 rounded-xl border border-gray-800 p-6 hover:border-gray-600 transition">
               <img
-                src="/placeholders/cv-preview.png"
-                alt="Computer Vision Project Screenshot"
+                src="/placeholders/fine-tune-preview.png"
+                alt="Fine-Tuning Project Screenshot"
                 className="rounded-lg w-full"
               />
 
               <div className="space-y-3">
                 <h2 className="text-xl font-semibold text-gray-100 group-hover:text-white transition">
-                  Computer Vision System
+                  LLM Fine-Tuning Project
                 </h2>
 
                 <ul className="space-y-2 text-gray-400 text-sm">
-                  <li>Custom dataset training pipeline</li>
-                  <li>YOLO-based detection model</li>
-                  <li>Real-time inference experimentation</li>
-                  <li>Performance optimization</li>
+                  <li>Curated training dataset design</li>
+                  <li>Domain-adaptive fine-tuning workflow</li>
+                  <li>Model evaluation and benchmarking</li>
+                  <li>Inference performance testing</li>
                 </ul>
               </div>
             </div>
