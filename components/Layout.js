@@ -56,7 +56,7 @@ export default function Layout({ children }) {
                   className="px-7 py-2 rounded-md bg-gray-700/60 border border-gray-500/40 
             hover:bg-gray-600/60 hover:border-gray-400/60 transition font-medium backdrop-blur-sm"
                 >
-                  Download CV
+                  Download Resume
                 </a>
               </div>
             </div>
