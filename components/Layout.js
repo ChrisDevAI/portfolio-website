@@ -50,7 +50,7 @@ export default function Layout({ children }) {
               {/* Download CV */}
               <div className="mt-2">
                 <a
-                  href="/ChrisR-CV.pdf"
+                  href="/resume/Christopher_Mena_Resume.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="px-7 py-2 rounded-md bg-gray-700/60 border border-gray-500/40 
