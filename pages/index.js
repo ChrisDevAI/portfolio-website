@@ -7,9 +7,10 @@ export default function Home() {
         </h1>
 
         <p className="body-text text-base md:text-lg text-gray-300 leading-relaxed">
-          I engineer and deploy production-ready AI systems — integrating model fine-tuning,
-          computer vision, and LLM workflows into structured, full-stack architectures. My focus is
-          reliability, performance, and measurable outcomes under real-world constraints.
+          I build and deploy applied AI systems that combine computer vision, LLM workflows, and
+          full-stack engineering into structured, practical applications. My focus is reliability,
+          clear system design, and building solutions that work under real implementation
+          constraints.
         </p>
       </div>
 
@@ -19,10 +20,11 @@ export default function Home() {
             Architecting applied AI systems using LLMs, computer vision (YOLOv8, OpenCV), OCR, and
             NLP pipelines
           </li>
-          <li>Designing end-to-end ML workflows from data ingestion to deployment</li>
+          <li>Designing end-to-end AI/ML workflows from data ingestion to deployment</li>
           <li>Data preprocessing, feature engineering, and performance optimization</li>
           <li>
-            Building production APIs (FastAPI) that integrate AI models into real-world applications
+            Building application APIs (FastAPI) that integrate AI models into usable software
+            systems
           </li>
           <li>Full-stack engineering with React and Next.js</li>
           <li>Model evaluation, validation, and reliability testing</li>
@@ -31,7 +33,7 @@ export default function Home() {
 
       <div>
         <p className="body-text text-gray-300 text-base">
-          Python · PyTorch · Scikit-Learn · OpenCV · YOLO · Tesseract OCR · Pandas · NumPy · FastAPI
+          Python · PyTorch · scikit-learn · OpenCV · YOLO · Tesseract OCR · Pandas · NumPy · FastAPI
           · Next.js · React · Tailwind · Git
         </p>
       </div>

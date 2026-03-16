@@ -51,8 +51,7 @@ export default function Layout({ children }) {
               <div className="mt-2">
                 <a
                   href="/resume/Christopher_Mena_Resume.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  download="Christopher_Mena_Resume.pdf"
                   className="px-7 py-2 rounded-md bg-gray-700/60 border border-gray-500/40 
             hover:bg-gray-600/60 hover:border-gray-400/60 transition font-medium backdrop-blur-sm"
                 >

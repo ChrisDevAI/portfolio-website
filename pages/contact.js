@@ -1,18 +1,20 @@
-import Head from 'next/head';
-import Layout from '@/components/Layout';
-import { useState } from 'react';
+// pages/contact.js
+
+import Head from "next/head";
+import { useState } from "react";
 
 export default function Contact() {
   const [form, setForm] = useState({
-    name: '',
-    email: '',
-    message: ''
+    name: "",
+    email: "",
+    message: "",
+    company: "",
   });
 
   const [status, setStatus] = useState({
     sending: false,
     success: null,
-    error: null
+    error: null,
   });
 
   function handleChange(e) {
@@ -24,49 +26,53 @@ export default function Contact() {
     setStatus({ sending: true, success: null, error: null });
 
     try {
-      const res = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(form)
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
       });
 
       const data = await res.json();
 
       if (data.success) {
         setStatus({ sending: false, success: true, error: null });
-        setForm({ name: '', email: '', message: '' });
+        setForm({ name: "", email: "", message: "", company: "" });
       } else {
-        setStatus({ sending: false, success: false, error: data.message });
+        setStatus({
+          sending: false,
+          success: false,
+          error: data.message || "Failed to send message",
+        });
       }
     } catch (err) {
-      setStatus({ sending: false, success: false, error: 'Network/server error' });
+      setStatus({
+        sending: false,
+        success: false,
+        error: "Network/server error",
+      });
     }
   }
 
   return (
     <>
       <Head>
-        <title>Contact | Chris R</title>
-        <meta name="description" content="Contact me" />
+        <title>Contact | Christopher Mena</title>
+        <meta name="description" content="Contact Me" />
       </Head>
 
       <main className="mt-2">
-        <h1 className="text-4xl font-semibold text-center mb-8 text-white">
-          Contact Me
-        </h1>
+        <h1 className="text-4xl font-semibold text-center mb-8 text-white">Contact Me</h1>
 
         <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
-          
           {/* LEFT COLUMN */}
           <div className="text-gray-300 space-y-4">
             <p>
-              Open to Applied AI engineering roles, technical collaborations, and research-aligned opportunities.
-
-              
+              Open to Applied AI / ML engineering opportunities, technical collaboration, and
+              thoughtful project discussions.
             </p>
 
             {/* Horizontal divider */}
-                <span className="block border-t-4 border-gray-600 my-2 w-48 mt-4"></span>
+            <span className="block border-t-4 border-gray-600 my-2 w-48 mt-4"></span>
 
             <div>
               <p className="font-semibold text-white">Email</p>
@@ -75,13 +81,11 @@ export default function Contact() {
                 className="text-blue-400 hover:text-blue-300 transition"
               >
                 ChrisMenaDevAI@gmail.com
-
-                
               </a>
             </div>
 
             {/* Horizontal divider */}
-                <span className="block border-t-4 border-gray-600 my-2 w-48 mt-4"></span>
+            <span className="block border-t-4 border-gray-600 my-2 w-48 mt-4"></span>
 
             <div>
               <p className="font-semibold text-white">LinkedIn</p>
@@ -92,14 +96,12 @@ export default function Contact() {
                 rel="noopener noreferrer"
               >
                 linkedin.com/in/ChrisDevAI
-
-                
               </a>
             </div>
 
             {/* Horizontal divider */}
-                <span className="block border-t-4 border-gray-600 my-2 w-48 mt-4"></span>
-            
+            <span className="block border-t-4 border-gray-600 my-2 w-48 mt-4"></span>
+
             <div>
               <p className="font-semibold text-white">GitHub</p>
               <a
@@ -109,20 +111,26 @@ export default function Contact() {
                 rel="noopener noreferrer"
               >
                 github.com/ChrisDevAI
-
-                
               </a>
 
               {/* Horizontal divider */}
-                <span className="block border-t-4 border-gray-600 my-2 w-48 mt-4"></span>
+              <span className="block border-t-4 border-gray-600 my-2 w-48 mt-4"></span>
             </div>
           </div>
 
           {/* RIGHT COLUMN — FORM */}
-          <form
-            onSubmit={handleSubmit}
-            className="space-y-4 bg-gray-800 p-8 rounded-xl shadow-xl"
-          >
+          <form onSubmit={handleSubmit} className="space-y-4 bg-gray-800 p-8 rounded-xl shadow-xl">
+            {/* Honeypot field */}
+            <input
+              type="text"
+              name="company"
+              value={form.company}
+              onChange={handleChange}
+              className="hidden"
+              tabIndex={-1}
+              autoComplete="off"
+            />
+
             <input
               type="text"
               name="name"
@@ -158,22 +166,17 @@ export default function Contact() {
               disabled={status.sending}
               className="w-full p-3 rounded bg-blue-600 text-white font-semibold hover:bg-blue-700 disabled:bg-blue-900"
             >
-              {status.sending ? 'Sending…' : 'Send Message'}
+              {status.sending ? "Sending…" : "Send Message"}
             </button>
 
             {status.success && (
               <p className="text-green-400 text-center mt-4">Message sent successfully.</p>
             )}
 
-            {status.error && (
-              <p className="text-red-400 text-center mt-4">Error: {status.error}</p>
-            )}
+            {status.error && <p className="text-red-400 text-center mt-4">Error: {status.error}</p>}
           </form>
-
         </div>
       </main>
-
-      </>
-    
+    </>
   );
 }

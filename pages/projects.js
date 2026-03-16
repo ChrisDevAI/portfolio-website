@@ -16,14 +16,16 @@ export default function Projects() {
         {/* Positioning Canvas */}
         <div className="relative max-w-6xl h-[900px]">
           {/* Chess AI Tutor */}
-          <Link
+          <a
             href="https://github.com/ChrisDevAI/chess-ai-tutor"
+            target="_blank"
+            rel="noopener noreferrer"
             className="group block absolute left-[-300px] top-[0px]"
           >
             <div className="rounded-xl border border-gray-800 p-6 hover:border-gray-600 transition w-[600px] h-[200px]">
               <div className="flex gap-6 items-start">
                 <img
-                  src="/screenshots/herochessai.jpg"
+                  src="/screenshots/HeroChessAI.jpg"
                   alt="Chess AI Tutor Screenshot"
                   className="rounded-lg w-64 h-40 object-cover"
                 />
@@ -42,17 +44,19 @@ export default function Projects() {
                 </div>
               </div>
             </div>
-          </Link>
+          </a>
 
           {/* Student Scheduler */}
-          <Link
+          <a
             href="https://github.com/ChrisDevAI/student-scheduler-planner"
+            target="_blank"
+            rel="noopener noreferrer"
             className="group block absolute left-[520px] top-[0px]"
           >
             <div className="rounded-xl border border-gray-800 p-6 hover:border-gray-600 transition w-[600px] h-[200px]">
               <div className="flex gap-6 items-start">
                 <img
-                  src="/screenshots/herostudentscheduler.jpg"
+                  src="/screenshots/HeroStudentScheduler.jpg"
                   alt="Student Scheduler Screenshot"
                   className="rounded-lg w-64 h-40 object-cover"
                 />
@@ -64,21 +68,18 @@ export default function Projects() {
 
                   <ul className="space-y-2 text-gray-400 text-sm">
                     <li>OCR pipeline with Tesseract</li>
-                    <li>LLM course code extraction</li>
+                    <li>Deterministic course code extraction</li>
                     <li>Constraint-based schedule generation</li>
                     <li>Full-stack implementation</li>
                   </ul>
                 </div>
               </div>
             </div>
-          </Link>
+          </a>
 
           {/* Fine-Tuning Project */}
-          <Link
-            href="/projects/fine-tuning-project"
-            className="group block absolute left-[-300px] top-[260px]"
-          >
-            <div className="rounded-xl border border-gray-800 p-6 hover:border-gray-600 transition w-[600px] h-[200px]">
+          <div className="absolute left-[-300px] top-[260px]">
+            <div className="rounded-xl border border-gray-800 p-6 w-[600px] h-[220px] opacity-90">
               <div className="flex gap-6 items-start">
                 <img
                   src="/screenshots/heroproject3.jpg"
@@ -87,9 +88,14 @@ export default function Projects() {
                 />
 
                 <div className="space-y-3">
-                  <h2 className="text-xl font-semibold text-gray-100 group-hover:text-white transition">
-                    LLM Fine-Tuning Project
-                  </h2>
+                  <div className="space-y-2">
+                    <h2 className="text-xl font-semibold text-gray-100 whitespace-nowrap">
+                      LLM Fine-Tuning Project
+                    </h2>
+                    <span className="inline-block w-fit text-xs px-2 py-1 rounded-md border border-gray-700 text-gray-400">
+                      In Development
+                    </span>
+                  </div>
 
                   <ul className="space-y-2 text-gray-400 text-sm">
                     <li>Curated training dataset design</li>
@@ -100,18 +106,15 @@ export default function Projects() {
                 </div>
               </div>
             </div>
-          </Link>
+          </div>
 
           {/* AI Middleware */}
-          <Link
-            href="/projects/ai-middleware"
-            className="group block absolute left-[520px] top-[260px]"
-          >
-            <div className="rounded-xl border border-gray-800 p-6 hover:border-gray-600 transition w-[600px] h-[200px]">
+          <div className="group block absolute left-[520px] top-[260px]">
+            <div className="rounded-xl border border-gray-800 p-6 w-[600px] h-[220px] opacity-90">
               <div className="flex gap-6 items-start">
                 <img
                   src="/screenshots/heroproject4.jpg"
-                  alt="AI Middleware Screenshot"
+                  alt="AI Middleware Project Screenshot"
                   className="rounded-lg w-64 h-40 object-cover"
                 />
 
@@ -119,6 +122,9 @@ export default function Projects() {
                   <h2 className="text-xl font-semibold text-gray-100 group-hover:text-white transition">
                     AI Middleware Layer
                   </h2>
+                  <span className="text-xs px-2 py-1 rounded-md border border-gray-700 text-gray-400">
+                    In Development
+                  </span>
 
                   <ul className="space-y-2 text-gray-400 text-sm">
                     <li>Software-domain vocabulary specialization</li>
@@ -129,7 +135,7 @@ export default function Projects() {
                 </div>
               </div>
             </div>
-          </Link>
+          </div>
         </div>
       </main>
     </>
