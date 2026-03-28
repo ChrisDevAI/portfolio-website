@@ -1,3 +1,5 @@
+// pages/index.js
+
 export default function Home() {
   return (
     <section className="pt-4 px-6 max-w-4xl mx-auto space-y-10">

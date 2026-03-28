@@ -1,7 +1,63 @@
+// pages/projects.js
+
 import Head from "next/head";
-import Link from "next/link";
 
 export default function Projects() {
+  const projects = [
+    {
+      title: "Chess AI Tutor",
+      href: "https://github.com/ChrisDevAI/chess-ai-tutor",
+      image: "/screenshots/HeroChessAI.jpg",
+      alt: "Chess AI Tutor Screenshot",
+      bullets: [
+        "Stockfish engine integration",
+        "LLM-based explanation layer",
+        "Snapshot position analysis",
+        "Local-first inference design",
+      ],
+      inDevelopment: false,
+    },
+    {
+      title: "Student Scheduler",
+      href: "https://github.com/ChrisDevAI/student-scheduler-planner",
+      image: "/screenshots/HeroStudentScheduler.jpg",
+      alt: "Student Scheduler Screenshot",
+      bullets: [
+        "OCR pipeline with Tesseract",
+        "Deterministic course code extraction",
+        "Constraint-based schedule generation",
+        "Full-stack implementation",
+      ],
+      inDevelopment: false,
+    },
+    {
+      title: "LLM Fine-Tuning Project",
+      href: null,
+      image: "/screenshots/heroproject3.jpg",
+      alt: "Fine-Tuning Project Screenshot",
+      bullets: [
+        "Curated training dataset design",
+        "Domain-adaptive fine-tuning workflow",
+        "Model evaluation and benchmarking",
+        "Inference performance testing",
+      ],
+      inDevelopment: true,
+    },
+    {
+      title: "AI Middleware Layer",
+      href: null,
+      image: "/screenshots/heroproject4.jpg",
+      alt: "AI Middleware Project Screenshot",
+      bullets: [
+        "Software-domain vocabulary specialization",
+        "False positive reduction framework",
+        "Context calibration pipeline",
+        "Precision / recall evaluation",
+      ],
+      inDevelopment: true,
+    },
+  ];
+
   return (
     <>
       <Head>
@@ -12,130 +68,61 @@ export default function Projects() {
         />
       </Head>
 
-      <main className="px-6 pt-4 pb-24">
-        {/* Positioning Canvas */}
-        <div className="relative max-w-6xl h-[900px]">
-          {/* Chess AI Tutor */}
-          <a
-            href="https://github.com/ChrisDevAI/chess-ai-tutor"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group block absolute left-[-300px] top-[0px]"
-          >
-            <div className="rounded-xl border border-gray-800 p-6 hover:border-gray-600 transition w-[600px] h-[200px]">
-              <div className="flex gap-6 items-start">
-                <img
-                  src="/screenshots/HeroChessAI.jpg"
-                  alt="Chess AI Tutor Screenshot"
-                  className="rounded-lg w-64 h-40 object-cover"
-                />
+      <main className="px-4 sm:px-6 pt-4 pb-24">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16">
+          {projects.map((project, index) => {
+            const card = (
+              <div className="rounded-xl border border-gray-800 p-4 sm:p-6 hover:border-gray-600 transition min-h-[200px] sm:min-h-[220px] opacity-90">
+                <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 items-start">
+                  <img
+                    src={project.image}
+                    alt={project.alt}
+                    className="rounded-lg w-full sm:w-48 md:w-56 h-40 object-cover flex-shrink-0"
+                  />
 
-                <div className="space-y-3">
-                  <h2 className="text-xl font-semibold text-gray-100 group-hover:text-white transition">
-                    Chess AI Tutor
-                  </h2>
+                  <div className="space-y-3 min-w-0 flex-1">
+                    <div className="space-y-2">
+                      <h2 className="text-xl font-semibold text-gray-100">{project.title}</h2>
 
-                  <ul className="space-y-2 text-gray-400 text-sm">
-                    <li>Stockfish engine integration</li>
-                    <li>LLM-based explanation layer</li>
-                    <li>Snapshot position analysis</li>
-                    <li>Local-first inference design</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </a>
+                      {project.inDevelopment && (
+                        <span className="inline-block w-fit text-xs px-2 py-1 rounded-md border border-gray-700 text-gray-400">
+                          In Development
+                        </span>
+                      )}
+                    </div>
 
-          {/* Student Scheduler */}
-          <a
-            href="https://github.com/ChrisDevAI/student-scheduler-planner"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group block absolute left-[520px] top-[0px]"
-          >
-            <div className="rounded-xl border border-gray-800 p-6 hover:border-gray-600 transition w-[600px] h-[200px]">
-              <div className="flex gap-6 items-start">
-                <img
-                  src="/screenshots/HeroStudentScheduler.jpg"
-                  alt="Student Scheduler Screenshot"
-                  className="rounded-lg w-64 h-40 object-cover"
-                />
-
-                <div className="space-y-3">
-                  <h2 className="text-xl font-semibold text-gray-100 group-hover:text-white transition">
-                    Student Scheduler
-                  </h2>
-
-                  <ul className="space-y-2 text-gray-400 text-sm">
-                    <li>OCR pipeline with Tesseract</li>
-                    <li>Deterministic course code extraction</li>
-                    <li>Constraint-based schedule generation</li>
-                    <li>Full-stack implementation</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </a>
-
-          {/* Fine-Tuning Project */}
-          <div className="absolute left-[-300px] top-[260px]">
-            <div className="rounded-xl border border-gray-800 p-6 w-[600px] h-[220px] opacity-90">
-              <div className="flex gap-6 items-start">
-                <img
-                  src="/screenshots/heroproject3.jpg"
-                  alt="Fine-Tuning Project Screenshot"
-                  className="rounded-lg w-64 h-40 object-cover"
-                />
-
-                <div className="space-y-3">
-                  <div className="space-y-2">
-                    <h2 className="text-xl font-semibold text-gray-100 whitespace-nowrap">
-                      LLM Fine-Tuning Project
-                    </h2>
-                    <span className="inline-block w-fit text-xs px-2 py-1 rounded-md border border-gray-700 text-gray-400">
-                      In Development
-                    </span>
+                    <ul className="space-y-2 text-gray-400 text-sm">
+                      {project.bullets.map((bullet) => (
+                        <li key={bullet}>{bullet}</li>
+                      ))}
+                    </ul>
                   </div>
-
-                  <ul className="space-y-2 text-gray-400 text-sm">
-                    <li>Curated training dataset design</li>
-                    <li>Domain-adaptive fine-tuning workflow</li>
-                    <li>Model evaluation and benchmarking</li>
-                    <li>Inference performance testing</li>
-                  </ul>
                 </div>
               </div>
-            </div>
-          </div>
+            );
 
-          {/* AI Middleware */}
-          <div className="group block absolute left-[520px] top-[260px]">
-            <div className="rounded-xl border border-gray-800 p-6 w-[600px] h-[220px] opacity-90">
-              <div className="flex gap-6 items-start">
-                <img
-                  src="/screenshots/heroproject4.jpg"
-                  alt="AI Middleware Project Screenshot"
-                  className="rounded-lg w-64 h-40 object-cover"
-                />
+            const columnOffsetClass = index % 2 === 0 ? "md:-ml-6" : "";
 
-                <div className="space-y-3">
-                  <h2 className="text-xl font-semibold text-gray-100 group-hover:text-white transition">
-                    AI Middleware Layer
-                  </h2>
-                  <span className="text-xs px-2 py-1 rounded-md border border-gray-700 text-gray-400">
-                    In Development
-                  </span>
+            if (project.href) {
+              return (
+                <a
+                  key={project.title}
+                  href={project.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`group block ${columnOffsetClass}`}
+                >
+                  {card}
+                </a>
+              );
+            }
 
-                  <ul className="space-y-2 text-gray-400 text-sm">
-                    <li>Software-domain vocabulary specialization</li>
-                    <li>False positive reduction framework</li>
-                    <li>Context calibration pipeline</li>
-                    <li>Precision / recall evaluation</li>
-                  </ul>
-                </div>
+            return (
+              <div key={project.title} className={columnOffsetClass}>
+                {card}
               </div>
-            </div>
-          </div>
+            );
+          })}
         </div>
       </main>
     </>
