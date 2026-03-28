@@ -1,6 +1,17 @@
-// pages/api/contact.js
+// api/contact.js
 
 import nodemailer from "nodemailer";
+
+export const config = {
+  api: {
+    bodyParser: {
+      sizeLimit: "10kb",
+    },
+  },
+};
+
+const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const hasHeaderChars = (value) => /[\r\n]/.test(value);
 
 export default async function handler(req, res) {
   if (req.method !== "POST") {
@@ -10,7 +21,7 @@ export default async function handler(req, res) {
     });
   }
 
-  const { name, email, message, company } = req.body;
+  const { name, email, message, company } = req.body || {};
 
   // Honeypot spam trap
   if (company) {
@@ -18,13 +29,22 @@ export default async function handler(req, res) {
   }
 
   const trimmedName = String(name || "").trim();
-  const trimmedEmail = String(email || "").trim();
+  const trimmedEmail = String(email || "")
+    .trim()
+    .toLowerCase();
   const trimmedMessage = String(message || "").trim();
 
   if (!trimmedName || !trimmedEmail || !trimmedMessage) {
     return res.status(400).json({
       success: false,
       message: "All fields are required",
+    });
+  }
+
+  if (hasHeaderChars(trimmedName) || hasHeaderChars(trimmedEmail)) {
+    return res.status(400).json({
+      success: false,
+      message: "Invalid input",
     });
   }
 
@@ -35,7 +55,7 @@ export default async function handler(req, res) {
     });
   }
 
-  if (trimmedEmail.length > 320) {
+  if (trimmedEmail.length > 254) {
     return res.status(400).json({
       success: false,
       message: "Email is too long",
@@ -48,8 +68,6 @@ export default async function handler(req, res) {
       message: "Message is too long",
     });
   }
-
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
   if (!emailRegex.test(trimmedEmail)) {
     return res.status(400).json({
@@ -67,7 +85,7 @@ export default async function handler(req, res) {
       },
     });
 
-    const mailOptions = {
+    await transporter.sendMail({
       from: process.env.EMAIL_USER,
       to: process.env.EMAIL_USER,
       replyTo: trimmedEmail,
@@ -77,9 +95,7 @@ Email: ${trimmedEmail}
 
 Message:
 ${trimmedMessage}`,
-    };
-
-    await transporter.sendMail(mailOptions);
+    });
 
     return res.status(200).json({ success: true });
   } catch (err) {
