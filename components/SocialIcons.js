@@ -37,7 +37,7 @@ export default function SocialIcons() {
         <FaXTwitter className="hover:text-white transition" />
       </a>
       <a
-        href="https://www.chess.com/member/helmsdeepanalytics"
+        href="https://www.chess.com/member/adveniatchristophertuum"
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Chess.com"
